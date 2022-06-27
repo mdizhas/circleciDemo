@@ -4,7 +4,6 @@ const LogoutPage = require('../../pageobjects/common/logout.page')
 const EncounterStatusPage = require('..//..//pageobjects/provider/encounterstatus.page')
 
 describe("ACD-938 Sign_In to AllyNet/", function () {
-
     const users = [{
         "email": "qa+provider@mdally.com",
         "password": "TEMP@ssw0rd",
