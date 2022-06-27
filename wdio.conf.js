@@ -1,4 +1,4 @@
-// username = process.env.BROWSERSTACK_USERNAME
+username = process.env.BROWSERSTACK_USERNAME
 accessKey = process.env.BROWSERSTACK_ACCESS_KEY
 browserstackLocal = process.env.BROWSERSTACK_LOCAL
 browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER
