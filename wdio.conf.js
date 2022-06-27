@@ -1,18 +1,18 @@
-var webdriver = require('@wdio/browserstack-service');
+var webdriver = require('@browserstack/wdio-browserstack-service');
 username = process.env.BROWSERSTACK_USERNAME
 accessKey = process.env.BROWSERSTACK_ACCESS_KEY
 browserstackLocal = process.env.BROWSERSTACK_LOCAL
 browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER
 
-// exports.config = {
-//   user: process.env.BROWSERSTACK_USERNAME,
-//   key: process.env.BROWSERSTACK_ACCESS_KEY,
-//   services: [
-//       ['@browserstack/wdio-browserstack-service', {
-//           browserstackLocal: false
-//       }]
-//   ],
-// };
+exports.config = {
+  user: process.env.BROWSERSTACK_USERNAME,
+  key: process.env.BROWSERSTACK_ACCESS_KEY,
+  services: [
+      ['@browserstack/wdio-browserstack-service', {
+          browserstackLocal: false
+      }]
+  ],
+};
 
 var capabilities = {
  "os" : "Windows",
