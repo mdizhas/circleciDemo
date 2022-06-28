@@ -21,6 +21,7 @@ exports.config = {
             "seleniumVersion" : "3.14.0",
             },
         "browserName" : "Chrome",
+        
     },
     // {
     //     maxInstances: 1,
