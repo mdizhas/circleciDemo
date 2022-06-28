@@ -1,55 +1,92 @@
 const config = require('./libs/config')
 
-// var webdriver = require('@browserstack/wdio-browserstack-service');
-const webdriver = require('selenium-webdriver');
-username = process.env.BROWSERSTACK_USERNAME
-accessKey = process.env.BROWSERSTACK_ACCESS_KEY
-browserstackLocal = process.env.BROWSERSTACK_LOCAL
-browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER
-
 exports.config = {
-  // Specify Test Files
-  specs: [
-    './specs/*/**.js'
-  ],
-  // Patterns to exclude.
-  exclude: [
-    // 'path/to/excluded/files'
-  ],
-  // Capabilities
-  maxInstances: 5,
-  capabilities: [{
+    // Specify Test Files
+    specs: [
+        './specs/*/**.js'
+    ],
+    // Patterns to exclude.
+    exclude: [
+        // 'path/to/excluded/files'
+    ],
+    // Capabilities
     maxInstances: 5,
-    acceptInsecureCerts: true,
-    'bstack:options': {
-      "os": "Windows",
-      "osVersion": "11",
-      "local": "false",
-      "seleniumVersion": "3.14.0",
+    capabilities: [{
+        maxInstances: 5,
+        acceptInsecureCerts: true,
+        'bstack:options' : {
+            "os" : "Windows",
+            "osVersion" : "11",
+            "local" : "false",
+            "seleniumVersion" : "3.14.0",
+            },
+        "browserName" : "Chrome",
     },
-    "browserName": "Chrome",
-  },
-  ],
-
-  user: process.env.BROWSERSTACK_USERNAME,
-  key: process.env.BROWSERSTACK_ACCESS_KEY,
-  services: [
-    ['@browserstack/wdio-browserstack-service', {
-      browserstackLocal: false
-    }]
-  ],
-};
-
-var capabilities = {
-  "os": "Windows",
-  "browser": "chrome",
-  "browserstack.local": browserstackLocal,
-  "browserstack.localIdentifier": browserstackLocalIdentifier,
-  "browserstack.user": username,
-  "browserstack.key": accessKey
+    // {
+    //     maxInstances: 1,
+    //     acceptInsecureCerts: true,
+    //     'bstack:options' : {
+    //         "os" : "OS X",
+    //         "osVersion" : "Monterey",
+    //         "local" : "false",
+    //         "seleniumVersion" : "3.14.0",
+    //         },
+    //     "browserName" : "Safari",
+    //     "browserVersion" : "15.0", 
+    // },
+    // {
+    //     maxInstances: 1,
+    //     acceptInsecureCerts: true,
+    //     'bstack:options' : {
+    //             "osVersion" : "14",
+    //             "deviceName" : "iPhone 12",
+    //             "realMobile" : "true",
+    //             "local" : "false",
+    //         },
+    //     "browserName" : "Chrome",
+    // },
+    // {
+    //     maxInstances: 1,
+    //     acceptInsecureCerts: true,
+    //     'bstack:options' : {
+    //         "osVersion" : "10.0",
+    //         "deviceName" : "Samsung Galaxy S20",
+    //         "realMobile" : "true",
+    //         "local" : "false",
+    //         },
+    //     "browserName" : "Chrome",
+    // },
+    // {
+    //     maxInstances: 1,
+    //     acceptInsecureCerts: true,
+    //     'bstack:options' : {
+    //         "osVersion" : "14",
+    //         "deviceName" : "iPad Pro 12.9 2020",
+    //         "realMobile" : "true",
+    //         "local" : "false",
+    //         },
+    //     "browserName" : "Safari",
+    // }
+    ],
+    // Test Configurations
+    logLevel: 'info',
+    bail: 0,
+    baseUrl: config.base_url,
+    waitforTimeout: 10000,
+    connectionRetryTimeout: 120000,
+    connectionRetryCount: 3,
+    services: ['browserstack'],
+    // user: process.env.BROSWERSTACK_USERNAME,
+    // key: process.env.BROSWERSTACK_KEY,
+    user: "harshashirali_i1TaPx",
+    key: "qBB512MSPEDyHstEx6Sx",
+    browserstackLocal: true,
+    framework: 'mocha',
+    reporters: ['spec'],
+    port: 443,
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000,
+        require: ['@babel/register']
+    },
 }
-
-var driver = new webdriver.Builder().
-  usingServer("https://hub-cloud.browserstack.com/wd/hub").
-  withCapabilities(capabilities).
-  build();
