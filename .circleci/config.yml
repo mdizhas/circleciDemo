@@ -20,17 +20,17 @@ workflows:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
 
-machine:
-  environment:
-    BROWSERSTACK_USERNAME: "harshashirali_i1TaPx"
-    BROWSERSTACK_ACCESS_KEY: "qBB512MSPEDyHstEx6Sx"
-    BROWSERSTACK_LOCAL: false
-test:
-    pre:
-    # Download the browserstack binary file
-    - wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
-    # Unzip the BrowserStack Local binary file
-    - unzip BrowserStackLocal-linux-x64.zip
-    # Run the file with your access key
-    - ./BrowserStackLocal $BROWSERSTACK_ACCESS_KEY:
-        background: true
+# machine:
+#   environment:
+#     BROWSERSTACK_USERNAME: "harshashirali_i1TaPx"
+#     BROWSERSTACK_ACCESS_KEY: "qBB512MSPEDyHstEx6Sx"
+#     BROWSERSTACK_LOCAL: false
+# test:
+#     pre:
+#     # Download the browserstack binary file
+#     - wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
+#     # Unzip the BrowserStack Local binary file
+#     - unzip BrowserStackLocal-linux-x64.zip
+#     # Run the file with your access key
+#     - ./BrowserStackLocal $BROWSERSTACK_ACCESS_KEY:
+#         background: true
