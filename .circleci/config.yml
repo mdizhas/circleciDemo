@@ -20,6 +20,42 @@ workflows:
           # If you are using yarn, change the line below from "npm" to "yarn"
           pkg-manager: npm
 
+
+
+#Integrate with BrowserStack
+
+# machine:
+#   environment:
+#     BROWSERSTACK_USERNAME: "mohammedizhas_DqiMzA"
+#     BROWSERSTACK_ACCESS_KEY: "FjApp8QYJfjajQsQyw6N"
+#     BROWSERSTACK_LOCAL: false
+#     BROWSERSTACK_LOCAL_IDENTIFIER: "identifier"
+
+
+# username = process.env.BROWSERSTACK_USERNAME
+# accessKey = process.env.BROWSERSTACK_ACCESS_KEY
+# browserstackLocal = process.env.BROWSERSTACK_LOCAL
+# browserstackLocalIdentifier = process.env.BROWSERSTACK_LOCAL_IDENTIFIER
+
+# var capabilities = {
+#  "os" : "Windows",
+#  "browser" : "chrome",
+#  "browserstack.local" : browserstackLocal,
+#  "browserstack.localIdentifier" : browserstackLocalIdentifier,
+#  "browserstack.user" : username,
+#  "browserstack.key" : accessKey
+# }
+
+# var driver = new webdriver.Builder().
+#   usingServer("https://hub-cloud.browserstack.com/wd/hub").
+#   withCapabilities(capabilities).
+#   build();
+
+
+
+
+#Running local tests
+
 # machine:
 #   environment:
 #     BROWSERSTACK_USERNAME: "harshashirali_i1TaPx"
