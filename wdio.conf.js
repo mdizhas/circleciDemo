@@ -1,28 +1,27 @@
 const config = require('./libs/config')
 
 exports.config = {
-    // Specify Test Files
-    specs: [
-        './specs/*/**.js'
-    ],
-    // Patterns to exclude.
-    exclude: [
-        // 'path/to/excluded/files'
-    ],
-    // Capabilities
+  // Specify Test Files
+  specs: [
+    './specs/*/**.js'
+  ],
+  // Patterns to exclude.
+  exclude: [
+    // 'path/to/excluded/files'
+  ],
+  // Capabilities
+  maxInstances: 5,
+  capabilities: [{
     maxInstances: 5,
-    capabilities: [{
-        maxInstances: 5,
-        acceptInsecureCerts: true,
-        'bstack:options' : {
-            "os" : "Windows",
-            "osVersion" : "11",
-            "local" : "false",
-            "seleniumVersion" : "3.14.0",
-            },
-        "browserName" : "Chrome",
-        
+    acceptInsecureCerts: true,
+    'bstack:options': {
+      "os": "Windows",
+      "osVersion": "11",
+      "local": "false",
+      "seleniumVersion": "3.14.0",
     },
+    "browserName": "Chrome",
+  },
     // {
     //     maxInstances: 1,
     //     acceptInsecureCerts: true,
@@ -68,26 +67,26 @@ exports.config = {
     //         },
     //     "browserName" : "Safari",
     // }
-    ],
-    // Test Configurations
-    logLevel: 'info',
-    bail: 0,
-    baseUrl: config.base_url,
-    waitforTimeout: 10000,
-    connectionRetryTimeout: 120000,
-    connectionRetryCount: 3,
-    services: ['browserstack'],
-    // user: process.env.BROSWERSTACK_USERNAME,
-    // key: process.env.BROSWERSTACK_KEY,
-    user: "harshashirali_i1TaPx",
-    key: "qBB512MSPEDyHstEx6Sx",
-    browserstackLocal: true,
-    framework: 'mocha',
-    reporters: ['spec'],
-    port: 443,
-    mochaOpts: {
-        ui: 'bdd',
-        timeout: 60000,
-        require: ['@babel/register']
-    },
+  ],
+  // Test Configurations
+  logLevel: 'info',
+  bail: 0,
+  baseUrl: config.base_url,
+  waitforTimeout: 10000,
+  connectionRetryTimeout: 120000,
+  connectionRetryCount: 3,
+  services: ['browserstack'],
+  // user: process.env.BROSWERSTACK_USERNAME,
+  // key: process.env.BROSWERSTACK_KEY,
+  user: "harshashirali_i1TaPx",
+  key: "qBB512MSPEDyHstEx6Sx",
+  browserstackLocal: true,
+  framework: 'mocha',
+  reporters: ['spec'],
+  port: 443,
+  mochaOpts: {
+    ui: 'bdd',
+    timeout: 60000,
+    require: ['@babel/register']
+  },
 }
