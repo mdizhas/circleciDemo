@@ -1,4 +1,3 @@
-
 const LoginPage = require('../../pageobjects/common/login.page')
 const LogoutPage = require('../../pageobjects/common/logout.page')
 const EncounterStatusPage = require('..//..//pageobjects/provider/encounterstatus.page')
